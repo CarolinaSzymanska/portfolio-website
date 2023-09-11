@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <title>CONTACT | Karolina Szymanska</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="logo icon">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="work.html">My Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2 class="section-title section-title-contact">Let's Connect</h2>
+
+        <hr class="section-subtitle section-subtitle-contact">
+
+        <div class="contact-me-body">
+            <p>I'm always open to new opportunities and collaborations. Whether you have a project in mind or just want
+                to chat about web development trends, feel free to reach out to me. You can find my contact information
+                in the footer below, or connect with me on LinkedIn or GitHub.</p>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h2 class="contact">Contact</h2>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="Phone" required>
+            <textarea id="message" rows="4" placeholder="Message"></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+
+        <a href="mailto:karolina.szymanska87@gmail.com" class="footer-link">karolina.szymanska87@gmail.com</a>
+        
+        <ul class="social-list">
+            <li class="social-list-item">
+                <a class="social-list-link" href="https://www.linkedin.com/in/karolina-szymanska-/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list-item">
+                <a class="social-list-link" href="https://github.com/CarolinaSzymanska" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li class="social-list-item">
+                <a class="social-list-link" href="https://www.instagram.com/karolinaszymanska_/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li class="social-list-item">
+                <a class="social-list-link" href="https://www.facebook.com/profile.php?id=100084104757468" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <div class="mobile-navmenu">
+        <a href="index.html">
+            <img class="mobile-logo" img src="img/logo.png" alt="logo icon" />
+        </a>
+
+        <div class="menu-icons">
+            <img class="menu-icon" src="img/menu.png" alt="" />
+            <img class="close-icon" src="img/close.png" alt="" />
+        </div>
+    </div>
+
+    <div class="mobile-menu-items">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="work.html">My Work</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "karolina.szymanska87@gmail.com",
+                Password: "Carmen@1987",
+                To: 'karolina.szymanska87@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form Enquiry",
+                Body: "Name: " + document.getElementById("name").value 
+                + "</br> Email: " + document.getElementById("email").value 
+                + "</br> Phone number: " + document.getElementById("phone").value
+                + "</br> Message: " + document.getElementById("message").value
+            }).then(
+                message => alert("Message Sent Succesfully")
+            );
+        }
+    </script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
